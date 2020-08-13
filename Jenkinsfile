@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'make'
+                sh 'whoami'
                 archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
