@@ -1,12 +1,12 @@
-Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent any
-
+    agent {
+        label 'linux'
+    }
     stages {
         stage('Build') {
             steps {
-                sh 'make' 
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+                sh 'make'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
             }
         }
     }
